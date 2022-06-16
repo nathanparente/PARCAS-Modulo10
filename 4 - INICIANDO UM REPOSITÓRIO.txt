@@ -1,0 +1,26 @@
+PRA NAVEGAR ENTRE AS PASTAS NO MEU PROMPT DE COMANDO OU TERMINAL O COMANDO É 
+
+cd 
+
+C:\Users\natha>cd Desktop
+
+C:\Users\natha\Desktop> cd ...
+
+PRA VER OS ITENS DENTRO DE UMA PASTA 
+
+dir 
+
+C:\Users\natha\Desktop\Images>dir 
+
+PRA VOLTAR UM DIRETÓRIO
+
+cd .. ou ../
+
+PRA CRIAR UMA PASTA 
+
+mkdir [nome da pasta]
+
+PRA INICIAR UM REPOSITÓRIO DENTRO DA PASTA 
+
+git init
+

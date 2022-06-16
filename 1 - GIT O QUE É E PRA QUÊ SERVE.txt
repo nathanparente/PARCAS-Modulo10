@@ -1,0 +1,24 @@
+1 - problema 
+
+Uma pessoa cria o próprio código e depois passa a alterá-lo mas surge um bug gigante e pra resolver ele pode analisar 
+dentre as milhares de linhas de código até achar o problema 
+
+OU 
+
+Com o versionamento ele pode voltar para uma versão anterior e automaticamente o sistema vai mostrar o que foi alterado 
+e ele vai encontrar o bug mais facilmente. 
+
+2 - problema 
+
+Uma empresa tem um sistema e contrata 3 programadores para cuidar da manutenção, mas se 2 estiverem mexendo no mesmo código
+eles precisaria ou programar no mesmo local, no mesmo servidor (o que seria um problema)
+
+E ainda o 3° programador entra e mexe nos códigos alterando o que os 2 já alteraram. 
+
+VERSIONAMENTO (Solução)
+
+GIT - Sistema de versionamento
+
+1 - problema/resolvido : A tecnologia do GIT cria um histórico de alterações 
+
+2 - problema/resolvido : O GIT tem um servidor que permite os programadores alterarem os códigos no mesmo projeto

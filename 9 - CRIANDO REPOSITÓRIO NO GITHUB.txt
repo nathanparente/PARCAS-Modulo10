@@ -1,0 +1,120 @@
+Criando o repositório
+Abra o Github, faça login com a sua conta e clique em New repository:
+
+Em seguida, basta colocar o nome e descrição do repositório que você está criando e clicar em Create repository:
+
+O repositório foi criado, só que ainda está vazio.
+
+Inicializando um repositório na sua máquina
+Abra o Git Bash e vá até a pasta onde está o seu projeto.
+
+Agora, quero transformar essa minha pasta em um repositório Git.
+Pra isso, basta digitar git init e dar enter:
+
+$ git init
+
+Ele está falando que iniciou um repositório vazio nessa pasta. Como eu sei que agora tenho um repositório nessa pasta?
+Se você abrir a pasta no File Explorer e configurar ele para mostrar os arquivos ocultos, 
+verá que tem uma pasta a mais chamada .git:
+
+O Git usa essa pasta pra controlar as alterações feitas no seu repositório.
+
+Adicionando uma origin
+Vamos agora executar esse comando:
+
+git remote add origin https://github.com/nomedoprojeto/nomedorepositorio.git 
+
+Basicamente o que estamos dizendo nessa linha de comando é:
+"Git, esse meu repositório local se conectará com um remoto
+
+Se você abrir aquela pasta .git e abrir o arquivo chamado config lá dentro, verá a seguinte linha:
+
+[remote "origin"]
+    url = git@github.com:gabsferreira/postsdoblog.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+
+É onde está configurada nossa origin
+
+Enviando alterações para o Github
+Quando estou dentro de uma pasta que é um repositório Git e quero saber o que eu fiz de alterações, eu digito o seguinte comando:
+
+git status 
+
+Esse comando é um dos que você mais vai usar no Git.
+Ele irá mostrar:
+
+On branch master
+
+Initial commit
+
+Untracked files:  
+  (use "git add <file>..." to include in what will be committed)
+
+        Post.txt
+
+nothing added to commit but untracked files present (use "git add" to track)  
+
+Ele está dizendo aí que o arquivo Post.txt está untracked, ou seja, não está sendo monitorado/gerenciado pelo Git. Quero que ele seja!
+Então:
+
+git add Post.txt 
+
+ele ainda não guardou o estado do arquivo permanentemente, é só temporário.
+Se eu quiser que seja permantente, uso o git commit:
+
+git commit -m "aqui coloco uma mensagem, tipo: comitando primeiro post"  
+Beleza, comitado.
+Agora quero enviar isso para o meu repositório remoto:
+
+git push -u origin master  
+
+GIT IGNORE
+
+O Git vê cada arquivo em sua cópia de trabalho em um de três estados:
+
+1 rastreado – um arquivo que já passou pelo staging ou commit;
+2 não rastreado – um arquivo que não passou pelo staging ou commit; ou
+3 ignorado – um arquivo que o Git foi forçado a ignorar.
+
+Os arquivos ignorados costumam ser artefatos de desenvolvimento e arquivos gerados por máquina que 
+podem ser derivados da fonte do seu repositório ou que não devem passar por commit. Exemplos comuns incluem:
+
+caches de dependência, como o conteúdo de /node_modules ou /packages
+código compilado, como arquivos .o, .pyc e .class
+diretórios de saída de build, como /bin, /out ou /target
+arquivos gerados no período de execução, como .log, .lock ou .tmp
+arquivos de sistema ocultos, como .DS_Store ou Thumbs.db
+arquivos pessoais de configuração do IDE, como .idea/workspace.xml 
+
+
+Os arquivos ignorados são rastreados em um arquivo especial chamado .gitignore, 
+que é verificado na origem do seu repositório. Não há nenhum comando git ignore explícito: 
+
+é preciso editar e fazer commit do arquivo .gitignore à mão quando você tiver novos arquivos que quer ignorar. 
+
+Os arquivos .gitignore contêm padrões que são comparados com nomes de arquivos em seu repositório 
+para determinar se devem ou não ser ignorados.
+
+Git revert
+
+O comando git revert pode ser considerado um comando do tipo "desfazer"; no entanto, 
+ele não é uma operação tradicional de desfazer. Em vez de remover o commit do histórico do projeto, 
+ele descobre como inverter as alterações introduzidas pelo commit e anexa um commit novo com o conteúdo resultante. 
+Assim, ele evita que o Git perca o histórico, o que é importante para a integridade do histórico de revisão
+ e para uma colaboração confiável.
+
+O processo de reversão deve ser usado quando você quer aplicar o inverso do commit do histórico do projeto. 
+Isso pode ser útil, por exemplo, se você estiver acompanhando um bug e descobrir que ele foi introduzido por um único commit. 
+Em vez de ir até ela por conta própria, corrigir e confirmar um novo snapshot, você pode usar o git revert 
+para fazer tudo isso na hora.
+
+DELETANDO BRANCHS 
+
+git branch :[nome do branch] - PARA EXCLUÍ-LO REMOTAMENTE
+
+git branch -D [nome do branch] - PARA EXCLUÍ-LO DO PC 
+
+
+PRA COPIAR UM REPOSITÓRIO DE ALGUÉM NO GIT HUB O COMANDO É 
+
+git clone [url do projeto]

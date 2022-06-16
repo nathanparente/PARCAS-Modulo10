@@ -1,0 +1,12 @@
+NO CMD (TERMINAL, PROMPT DE COMANDO)
+
+C:/...... > git config --global user.name "SEU NOME"
+
+C:/...... > git config --global user.email "SEU EMAIL"
+
+C:/...... > git config --global core.editor "O NOME DO SEU EDITOR"
+
+PRA LER AS INFORMAÇÕES 
+
+C:/...... > git config --list 
+
